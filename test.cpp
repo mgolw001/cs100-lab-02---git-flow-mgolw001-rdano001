@@ -13,22 +13,30 @@ TEST(EchoTest, EmptyString) {
     EXPECT_EQ("", echo(1, test_val));
 }
 
-TEST(CountTest, HelloWorld) {
-    std::string test_str = "hello world";
-    EXPECT_EQ(2, count(test_str));
+TEST(EchoTest, SingleChar) {
+    char* test_val[2]; test_val[0] = "./c-echo"; test_val[1] = "h";
+    EXPECT_EQ("h", echo(2,test_val));
 }
 
-TEST(CountTest, EmptyString) {
-    std::string test_str = "";
-    EXPECT_EQ(0, count(test_str));
+
+TEST(EchoTest, Number) {
+    char* test_val[2]; test_val[0] = "./c-echo"; test_val[1] = "7";
+    EXPECT_EQ("7", echo(2,test_val));
 }
 
-TEST(CountTest, ManySpaces) {
-    std::string test_str = "   this   string has     weird   spacing";
-    EXPECT_EQ(5, count(test_str));
+TEST(EchoTest, SpecialChar) {
+    char* test_val[2]; test_val[0] = "./c-echo"; test_val[1] = "$";
+    EXPECT_EQ("$", echo(2,test_val));
+>>>>>>> master
 }
+
 
 int main(int argc, char **argv) {
+<<<<<<< HEAD
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
+=======
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();}
+
